@@ -21,11 +21,11 @@ function createCard(number) {
     //grid item
     let currentCardItem = document.createElement('div');
     currentCardItem.setAttribute('id', `c-section-gridItem__Card${number}`);
-    currentCardItem.classList.add("col-lg-4", "col-sm-6", "col-xs-12", "card-deck", "my-2");
+    currentCardItem.classList.add("col-lg-3","col-md-5", "col-sm-12", "col-xs-12", "m-2");
 
     //card
     let currentCard = document.createElement('div');
-    currentCard.classList.add("card");
+    currentCard.classList.add("card","p-3");
 
     currentCardItem.appendChild(currentCard);
     return currentCardItem;

@@ -7,15 +7,15 @@ h1,h2{
 }
 
 h1{
-  font-size: 6vw;
+  font-size: 4vw;
   @media screen and (min-width: 768px) {
-    font-size:4vw;
+    font-size:2vw;
 
   }
   font-weight:900;
 }
 h2{
-  font-size: 5vw;
+  font-size: 4vw;
   @media screen and (min-width: 768px) {
     font-size:3vw;
 
@@ -33,9 +33,9 @@ a{
 
 .titleText{
   font-family: 'Graduate', serif;
-  font-size:7vw;
+  font-size:4vw;
   @media screen and (min-width: 768px) {
-    font-size:3vw;
+    font-size:2vw;
 
   }
   text-transform: capitalize;
