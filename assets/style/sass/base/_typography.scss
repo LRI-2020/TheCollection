@@ -1,3 +1,43 @@
-﻿p,h1,h2,h3,h4,h5,h6, img,a{
+﻿p,h1,h2,h3,h4,h5,h6, img{
   color:#FFC14B;
+}
+
+h1,h2{
+  font-family: 'Graduate', serif;
+}
+
+h1{
+  font-size: 6vw;
+  @media screen and (min-width: 768px) {
+    font-size:4vw;
+
+  }
+  font-weight:900;
+}
+h2{
+  font-size: 5vw;
+  @media screen and (min-width: 768px) {
+    font-size:3vw;
+
+  }
+}
+
+
+
+a{
+  color:white;
+  text-transform:uppercase;
+  text-decoration: none;
+  font-weight:700;
+}
+
+.titleText{
+  font-family: 'Graduate', serif;
+  font-size:7vw;
+  @media screen and (min-width: 768px) {
+    font-size:3vw;
+
+  }
+  text-transform: capitalize;
+  font-weight:900;
 }
