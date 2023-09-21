@@ -33,7 +33,7 @@ function createCard(number) {
     //card wrapper - item of the grid
     let currentCardWrapper = document.createElement('div');
     currentCardWrapper.setAttribute('id', `c-section-gridItem__Card${number}`);
-    currentCardWrapper.classList.add("col-lg-3", "col-md-5", "col-sm-12", "col-xs-12", "m-2");
+    currentCardWrapper.classList.add("col-lg-3", "col-md-5", "col-sm-12", "col-xs-12","cardWrapper","m-2");
 
     //card
     let currentCard = document.createElement('div');
