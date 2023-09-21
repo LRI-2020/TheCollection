@@ -1,4 +1,4 @@
-﻿p,h1,h2,h3,h4,h5,h6, img{
+﻿p,h1,h2,h3,h4,h5,h6,a,img{
   color:#FFC14B;
 }
 
@@ -7,9 +7,9 @@ h1,h2{
 }
 
 h1{
-  font-size: 4vw;
+  font-size: 7vw;
   @media screen and (min-width: 768px) {
-    font-size:2vw;
+    font-size:4vw;
 
   }
   font-weight:900;
@@ -25,7 +25,6 @@ h2{
 
 
 a{
-  color:white;
   text-transform:uppercase;
   text-decoration: none;
   font-weight:700;
@@ -33,11 +32,16 @@ a{
 
 .titleText{
   font-family: 'Graduate', serif;
-  font-size:4vw;
+  font-size:6vw;
   @media screen and (min-width: 768px) {
     font-size:2vw;
 
   }
   text-transform: capitalize;
   font-weight:900;
+}
+
+.serieNumberText,.authorText,.summaryText{
+  font-family: 'Arsenal', sans-serif;
+  color:white
 }
