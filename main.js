@@ -26,8 +26,7 @@ for (let card of cards) {
 //functions
 
 //create a card, set the attributes and classes, add it to the item grid
-function createCard(number)  
-{
+function createCard(number) {
 
     //card wrapper - item of the grid
     let currentCardWrapper = document.createElement('div');
@@ -42,12 +41,19 @@ function createCard(number)
     return currentCardWrapper;
 }
 
+function createCardTrashIcon() {
+    let icon = document.createElement('img');
+    setImgAttributes(icon, null, "deleteIcon,align-self-end,m-3", "assets/img/trash.svg", "trashIcon");
+    return icon;
+}
+
 //fulfill the empty card
 function fulfillCard(card, cardNumber, book) {
 
-    //create elements of the card - Img - Body - footer
+    //create elements of the card - Imgs - Body - footer
     let cardElements = [
-        createCardImg(cardNumber, "bookCover,card-img-top", book),
+        createCardTrashIcon(),
+        createCardImgTop(cardNumber, "bookCover,card-img-top", book),
         createCardBody(cardNumber, book),
         createCardFooter(cardNumber, book)
     ];
@@ -59,7 +65,7 @@ function fulfillCard(card, cardNumber, book) {
 }
 
 // create the img of the card
-function createCardImg(cardNumber, classNames, book) {
+function createCardImgTop(cardNumber, classNames, book) {
 
     let img = document.createElement('img');
     setImgAttributes(img, `card${cardNumber}-img__cover`, classNames, book.cover, `Book${book.number} Cover`);
@@ -68,7 +74,9 @@ function createCardImg(cardNumber, classNames, book) {
 
 //Set the attributes and classes for each img of each card
 function setImgAttributes(img, id, classNames, src, alt) {
-    img.setAttribute('id', id);
+    if (id !== null) {
+        img.setAttribute('id', id);
+    }
 
     for (let className of classNames.split(',')) {
         img.classList.add(className);
@@ -84,7 +92,7 @@ function createCardBody(cardNumber, book) {
     let cardBody = document.createElement('div');
     cardBody.classList.add("card-body");
 
-    addCardBodyElements(cardBody, cardNumber, book); 
+    addCardBodyElements(cardBody, cardNumber, book);
 
     return cardBody;
 }
@@ -149,7 +157,7 @@ function createCardFooter(cardNumber, book) {
 
 // create a link element with attributes and classes
 function createLink(id, classNames, href, innerText) {
-   
+
     let a = document.createElement('a');
     setLinkAttributes(a, id, classNames, href, innerText);
     return a;
