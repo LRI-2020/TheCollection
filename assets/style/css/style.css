@@ -310,11 +310,8 @@ template {
   display: none;
 }
 
-p, h1, h2, h3, h4, h5, h6, a, img {
-  color: #FFC14B;
-}
-
 h1, h2 {
+  color: #FFC14B;
   font-family: "Graduate", serif;
 }
 
@@ -337,27 +334,34 @@ h2 {
   }
 }
 
-a {
+.card-footer {
   text-transform: uppercase;
   text-decoration: none;
   font-weight: 700;
+  font-family: "Graduate", serif;
+  color: #FFC14B;
 }
 
-.titleText {
+.card-title {
   font-family: "Graduate", serif;
+  color: #FFC14B;
   font-size: 6vw;
   text-transform: capitalize;
   font-weight: 900;
 }
 @media screen and (min-width: 768px) {
-  .titleText {
+  .card-title {
     font-size: 2vw;
   }
 }
 
-.serieNumberText, .authorText, .summaryText {
+.card-body {
   font-family: "Arsenal", sans-serif;
   color: white;
+}
+
+.authorText {
+  text-transform: uppercase;
 }
 
 body {
@@ -377,17 +381,18 @@ body {
   justify-content: center;
 }
 
-.h30 {
-  height: 30%;
-}
-
-.h20 {
-  height: 20%;
-}
-
 .authorText {
   padding-top: 0;
   margin-top: 0;
+}
+
+.deleteBtn {
+  position: absolute;
+}
+
+.deleteIcon {
+  width: 50%;
+  filter: invert(1);
 }
 
 /*# sourceMappingURL=style.css.map */
