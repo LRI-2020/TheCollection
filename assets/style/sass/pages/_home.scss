@@ -16,15 +16,16 @@
   justify-content: center;
 }
 
-.h30{
-  height:30%;
-}
-
-.h20{
-  height:20%;
-}
 
 .authorText{
   padding-top:0;
   margin-top:0;
+}
+
+.deleteBtn{
+  position:absolute;
+}
+.deleteIcon{
+  width:50%;
+  filter: invert(1);
 }
