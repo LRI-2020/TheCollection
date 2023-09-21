@@ -1,8 +1,6 @@
-﻿p,h1,h2,h3,h4,h5,h6,a,img{
-  color:#FFC14B;
-}
-
+﻿
 h1,h2{
+  color:#FFC14B;
   font-family: 'Graduate', serif;
 }
 
@@ -10,7 +8,6 @@ h1{
   font-size: 7vw;
   @media screen and (min-width: 768px) {
     font-size:4vw;
-
   }
   font-weight:900;
 }
@@ -18,20 +15,20 @@ h2{
   font-size: 4vw;
   @media screen and (min-width: 768px) {
     font-size:3vw;
-
   }
 }
-
-
-
-a{
+.card-footer{
   text-transform:uppercase;
   text-decoration: none;
   font-weight:700;
+  font-family: 'Graduate', serif;
+  color:#FFC14B;
 }
 
-.titleText{
+.card-title{
   font-family: 'Graduate', serif;
+  color:#FFC14B;
+
   font-size:6vw;
   @media screen and (min-width: 768px) {
     font-size:2vw;
@@ -41,7 +38,12 @@ a{
   font-weight:900;
 }
 
-.serieNumberText,.authorText,.summaryText{
+.card-body{
   font-family: 'Arsenal', sans-serif;
   color:white
 }
+
+.authorText{
+  text-transform: uppercase;
+}
+

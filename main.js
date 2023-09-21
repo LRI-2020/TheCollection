@@ -25,7 +25,8 @@ for (let card of cards) {
 
 //functions
 
-function createCard(number) //create a card, set the attributes and classes, add it to the wrapper 
+//create a card, set the attributes and classes, add it to the item grid
+function createCard(number)  
 {
 
     //card wrapper - item of the grid
@@ -44,10 +45,11 @@ function createCard(number) //create a card, set the attributes and classes, add
 //fulfill the empty card
 function fulfillCard(card, cardNumber, book) {
 
-    //create elements of the card - Img and Body
+    //create elements of the card - Img - Body - footer
     let cardElements = [
         createCardImg(cardNumber, "bookCover,card-img-top", book),
-        createCardBody(cardNumber, book)
+        createCardBody(cardNumber, book),
+        createCardFooter(cardNumber, book)
     ];
 
     //add each element to the card
@@ -56,7 +58,7 @@ function fulfillCard(card, cardNumber, book) {
     }
 }
 
-
+// create the img of the card
 function createCardImg(cardNumber, classNames, book) {
 
     let img = document.createElement('img');
@@ -80,76 +82,46 @@ function setImgAttributes(img, id, classNames, src, alt) {
 function createCardBody(cardNumber, book) {
 
     let cardBody = document.createElement('div');
-    cardBody.classList.add("card-body", "row");
+    cardBody.classList.add("card-body");
 
-    addCardBodyRows(cardBody);
-    addCardElements(cardBody, cardNumber, book); // add html content in each body rows
+    addCardBodyElements(cardBody, cardNumber, book); 
 
     return cardBody;
 }
 
-// add rows to ensure all content of card are align with one another --> card body is itself a grid)
-function addCardBodyRows(cardBody) {
-    let cardBodyRows = createCardBodyRows();
-
-    for (let row of cardBodyRows) {
-        cardBody.appendChild(row);
-    }
-}
-
-
-// create all rows needed to display book properties --- allow to have all content align with content of another card
-function createCardBodyRows() {
-    
-    let rowsToCreate=[
-        "row,h20,titleRow,mb-2",
-        "row,h20,serieAuthorRow,my-2",
-        "row,h30,summaryRow,my-2",
-        "row,linkRow,mb-2"
-    ];
-    let cardBodyRows = [];
-    
-    for(let r of rowsToCreate){
-        cardBodyRows.push(createDivWithClasses(r));   
-    }
-
-    return cardBodyRows;
-}
-
-//create a div with row class
-function createDivWithClasses(classNames) {
-    let divElement = document.createElement('div');
-    for(let className of classNames.split(',')){
-        divElement.classList.add(className)
-    }
-    return divElement;
-}
-
 //add the elements containing the book properties to the cardBody
-function addCardElements(cardBody, cardNumber, book) {
+function addCardBodyElements(cardBody, cardNumber, book) {
 
-    let cardBodyElements = createCardElement(cardNumber, book);
+    let cardBodyElements = createCardBodyElements(cardNumber, book);
 
     // add the element in the correct order --> select them in the array through their class value
-    cardBody.querySelector(".titleRow").appendChild(cardBodyElements.find(i => i.classList.contains("titleText")));
-    cardBody.querySelector(".serieAuthorRow").appendChild(cardBodyElements.find(i => i.classList.contains("serieNumberText")));
-    cardBody.querySelector(".serieAuthorRow").appendChild(cardBodyElements.find(i => i.classList.contains("authorText")));
-    cardBody.querySelector(".summaryRow").appendChild(cardBodyElements.find(i => i.classList.contains("summaryText")));
-    cardBody.querySelector(".linkRow").appendChild(cardBodyElements.find(i => i.classList.contains("linkDivWrapper")));
-
+    cardBody.appendChild(cardBodyElements.find(i => i.classList.contains("card-title")));
+    cardBody.appendChild(cardBodyElements.find(i => i.classList.contains("serieNumberText")));
+    cardBody.appendChild(cardBodyElements.find(i => i.classList.contains("authorText")));
+    cardBody.appendChild(cardBodyElements.find(i => i.classList.contains("summaryText")));
 }
 
-// create and return each element that contain the book properties
-
-function createCardElement(cardNumber, book) {
+//create all the elements that are in the card body
+function createCardBodyElements(cardNumber, book) {
 
     return [
-        createParagraph(`p-titleCard${cardNumber}`, 'titleText,col-12', `${book.title}`),
-        createParagraph(`p-serieNumberCard${cardNumber}`, 'serieNumberText,col-12,mb-0', `${book.serie} - Book ${book.number}`),
-        createParagraph(`p-authorCard${cardNumber}`, 'authorText,col-12', book.author),
-        createParagraph(`p-summaryCard${cardNumber}`, 'summaryText,col-12', book.summary),
-        addLink(`a-readMoreCard${cardNumber}`, `readMoreLink,col-12`, book.readMoreLink, "Read More")
+        createTitle('3', 'card-title', `${book.title}`),
+        createParagraph(`p-serieNumberCard${cardNumber}`, 'serieNumberText,card-text,mb-0', `${book.serie} - Book ${book.number}`),
+        createParagraph(`p-authorCard${cardNumber}`, 'authorText,card-text', book.author),
+        createParagraph(`p-summaryCard${cardNumber}`, 'summaryText,card-text', book.summary),
     ];
+}
+
+
+//create a title html element and set class names
+function createTitle(level, classNames, innerText) {
+
+    let title = document.createElement(`h${level}`);
+    for (let className of classNames.split(',')) {
+        title.classList.add(className)
+    }
+    title.innerText = innerText;
+    return title;
 }
 
 // create a paragraph with the desired attributes
@@ -168,23 +140,27 @@ function setParaAttributes(p, id, classNames, innerText) {
     p.innerText = innerText;
 }
 
-// create the link element in a  wrapper and set attributes
-function addLink(id, classNames, href, innerText) {
-    let divWrapper = document.createElement('div');
-    divWrapper.classList.add('center', 'linkDivWrapper', 'col-12','align-text-bottom');
-    let a = document.createElement('a');
-    setLinkAttributes(a, id, classNames, href, innerText);
-    divWrapper.appendChild(a);
-    return divWrapper;
+
+//create the card footer
+function createCardFooter(cardNumber, book) {
+    return createLink(`a-readMoreCard${cardNumber}`, `readMoreLink,card-footer,text-center`, book.readMoreLink, "Read More")
 }
 
-// set attributes to a element
 
+// create a link element with attributes and classes
+function createLink(id, classNames, href, innerText) {
+   
+    let a = document.createElement('a');
+    setLinkAttributes(a, id, classNames, href, innerText);
+    return a;
+}
+
+// set attributes to a link element
 function setLinkAttributes(a, id, classNames, href, innerText) { // ste attributes needed to the link element
 
     a.setAttribute('id', id);
     a.setAttribute('href', href);
-    a.setAttribute('target','_blank');
+    a.setAttribute('target', '_blank');
     for (let className of classNames.split(',')) {
         a.classList.add(className);
     }
