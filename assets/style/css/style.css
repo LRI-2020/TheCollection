@@ -386,10 +386,13 @@ body {
   margin-top: 0;
 }
 
-.deleteIcon {
-  width: 10%;
-  filter: invert(1);
+.deleteBtn {
   position: absolute;
+}
+
+.deleteIcon {
+  width: 50%;
+  filter: invert(1);
 }
 
 /*# sourceMappingURL=style.css.map */
