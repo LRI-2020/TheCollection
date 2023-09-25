@@ -1,4 +1,4 @@
-﻿import {booksCollection} from "./booksCollection.js";
+﻿import {booksCollection} from "../booksCollection.js";
 
 function GenerateAllCards() {
 //get existing elment in html -- container for all card section
@@ -126,7 +126,7 @@ function addCardBodyElements(cardBody, cardNumber, book) {
 
     // add the element in the correct order --> select them in the array through their class value
     cardBody.appendChild(cardBodyElements.find(i => i.classList.contains("card-title")));
-    cardBody.appendChild(cardBodyElements.find(i => i.classList.contains("serieNumberText")));
+    cardBody.appendChild(cardBodyElements.find(i => i.classList.contains("dateText")));
     cardBody.appendChild(cardBodyElements.find(i => i.classList.contains("authorText")));
     cardBody.appendChild(cardBodyElements.find(i => i.classList.contains("summaryText")));
 }
@@ -136,7 +136,7 @@ function createCardBodyElements(cardNumber, book) {
 
     return [
         createTitle('3', 'card-title', `${book.title}`),
-        createParagraph(`p-serieNumberCard${cardNumber}`, 'serieNumberText,card-text,mb-0', `${book.serie} - Book ${book.number}`),
+        createParagraph(`p-dateCard${cardNumber}`, 'dateText,card-text,mb-0', `${book.year.getFullYear()}`),
         createParagraph(`p-authorCard${cardNumber}`, 'authorText,card-text', book.author),
         createParagraph(`p-summaryCard${cardNumber}`, 'summaryText,card-text', book.summary),
     ];
