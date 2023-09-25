@@ -47,4 +47,13 @@ function SortElements(elements, property, order) {
 
 }
 
-export {SortCards}
+function DisplaySortedCards(sortedCards, parent) {
+
+    parent.innerHTML="";
+
+    for (let card of sortedCards) {
+        parent.appendChild(card);
+    }
+}
+
+export {SortCards, DisplaySortedCards}

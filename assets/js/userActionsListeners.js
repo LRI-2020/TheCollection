@@ -1,5 +1,5 @@
 ﻿import {DeleteCard} from "./cardsManager/deleteCard.js";
-import {SortCards} from "./cardsManager/sortCards.js";
+import {SortCards, DisplaySortedCards} from "./cardsManager/sortCards.js";
 
 function SetDeleteListeners() {
     let deleteBtns = document.getElementsByClassName('deleteBtn');
@@ -11,22 +11,22 @@ function SetDeleteListeners() {
     }
 }
 
-function EmptyHtmlElm(ElementSelector) {
-    let Element = document.querySelector(ElementSelector);
-    Element.innerHTML = "";
-}
+
 
 function SetSortingListeners() {
     let sortingBtns = document.getElementsByClassName("sortingBtn");
+    
     let items = document.getElementsByClassName("cardWrapper");
+    
     for (let sortingBtn of sortingBtns) {
         sortingBtn.addEventListener('click', function () {
+           
+            //Sort the cards
             let sortedCards = SortCards(items, sortingBtn.name);
-            let CardWrapper = document.querySelector("#c-section-divGrid__cards");
-            CardWrapper.innerHTML="";
-            for (let card of sortedCards) {
-               CardWrapper.appendChild(card);
-            }
+            
+            //display the sorted cards
+            DisplaySortedCards(sortedCards,document.querySelector("#c-section-divGrid__cards"));
+            
         })
     }
 }
