@@ -1,20 +1,13 @@
-﻿import {GenerateAllCards} from "./assets/js/generateCards.js";
-import {DeleteCard} from "./assets/js/deleteCard.js";
+﻿import {GenerateAllCards} from "./assets/js/cardsManager/generateCards.js";
+import {SetDeleteListeners, SetSortingListeners} from "./assets/js/userActionsListeners.js";
 
-//on page load, cards are generated
-window.onload = function () {
-    GenerateAllCards();
+    GenerateAllCards();    
+    SetDeleteListeners();
+    SetSortingListeners();
+    
+    
 
 
-    let btns = document.getElementsByClassName('deleteBtn');
-
-    for (let btn of btns) {
-        btn.addEventListener('click', function(){
-            DeleteCard(btn.closest('.cardWrapper'));
-        })
-    }
-
-}
 
 
 

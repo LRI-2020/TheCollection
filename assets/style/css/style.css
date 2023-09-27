@@ -395,4 +395,12 @@ body {
   filter: invert(1);
 }
 
+.dropdown-toggle, .dropdown-menu {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.dropdown-item {
+  color: white;
+}
+
 /*# sourceMappingURL=style.css.map */
