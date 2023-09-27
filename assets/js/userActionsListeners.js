@@ -11,8 +11,6 @@ function SetDeleteListeners() {
     }
 }
 
-
-
 function SetSortingListeners() {
     let sortingBtns = document.getElementsByClassName("sortingBtn");
     
