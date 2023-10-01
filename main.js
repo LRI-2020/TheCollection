@@ -1,9 +1,11 @@
 ﻿import {GenerateAllCards} from "./assets/js/cardsManager/generateCards.js";
-import {SetDeleteListeners, SetSortingListeners} from "./assets/js/userActionsListeners.js";
+import {SetDeleteListeners, SetSortingListeners, SetSearchListener} from "./assets/js/userActionsListeners.js";
 
-    GenerateAllCards();    
-    SetDeleteListeners();
-    SetSortingListeners();
+GenerateAllCards();
+SetDeleteListeners();
+SetSortingListeners();
+SetSearchListener();
+document.cookie="these are my cookies";
     
     
 

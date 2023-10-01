@@ -12,6 +12,7 @@ function GenerateAllCards() {
         //create a wrapper card for the book
         let currentCardWrapper = document.createElement('div');
         currentCardWrapper.setAttribute('id', `c-section-gridItem__Card${book.number}`);
+        currentCardWrapper.setAttribute('book_id', `${book.id}`);
         currentCardWrapper.classList.add("col-lg-3", "col-md-5", "col-sm-12", "col-xs-12","cardWrapper","m-2");   
         
         //Add the card to the wrapper;

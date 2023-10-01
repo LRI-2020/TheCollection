@@ -1,7 +1,8 @@
-﻿let imgPath = "assets/img/";
+﻿let imgPath = `${window.location.origin}/assets/img/`;
 let booksCollection=[
 
     {
+        id:1,
         author: "John Connolly",
         title:  "Every dead thing",
         date: new Date(1999,0),
@@ -11,6 +12,7 @@ let booksCollection=[
         readMoreLink: "https://www.johnconnollybooks.com/books/-every-dead-thing----------------------------"
     },
     {
+        id:2,
         author: "John Connolly",
         title:  "Dark Hollow",
         date: new Date(2000,0),
@@ -20,6 +22,7 @@ let booksCollection=[
         readMoreLink: "https://www.johnconnollybooks.com/books/-dark-hollow---------------------------------"
     },
     {
+        id:3,
         author: "John Connolly",
         title:  "The Killing Kind",
         date: new Date(2001,0),
@@ -30,6 +33,7 @@ let booksCollection=[
         
     },
     {
+        id:4,
         author: "John Connolly",
         title:  "The White Road",
         date: new Date(2002,0),
@@ -39,6 +43,7 @@ let booksCollection=[
         readMoreLink: "https://www.johnconnollybooks.com/books/-the-white-road------------------------------"
     },
     {
+        id:5,
         author: "John Connolly",
         title:  "The Black Angel",
         date: new Date(2005,0),
@@ -49,6 +54,7 @@ let booksCollection=[
     },
 
     {
+        id:6,
         author: "John Connolly",
         title:  "The Unquiet",
         date: new Date(2007,0),
@@ -59,6 +65,7 @@ let booksCollection=[
     },
 
     {
+        id:7,
         author: "John Connolly",
         title: "The Reapers",
         date: new Date(2007,0),
@@ -70,6 +77,7 @@ let booksCollection=[
 
 
     {
+        id:8,
         author: "John Connolly",
         title: "The Lovers",
         date: new Date(2009,0),
@@ -79,6 +87,7 @@ let booksCollection=[
         readMoreLink: "https://www.johnconnollybooks.com/books/the-lovers"
     },
     {
+        id:9,
         author: "John Connolly",
         title: "The Whisperers",
         date: new Date(2010,0),
@@ -88,6 +97,7 @@ let booksCollection=[
         readMoreLink: "https://www.johnconnollybooks.com/books/-the-whisperers------------------------------"
     },
     {
+        id:10,
         author: "John Connolly",
         title: "The Burning Soul",
         date: new Date(2011,0),
