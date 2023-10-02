@@ -1,4 +1,4 @@
-﻿let imgPath = `${window.location.origin}/assets/img/`;
+﻿let imgPath = `${window.location.origin}/TheCollection/assets/img/`;
 let booksCollection=[
 
     {
