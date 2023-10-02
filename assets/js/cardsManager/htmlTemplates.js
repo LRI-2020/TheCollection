@@ -3,7 +3,7 @@ function FulfillCardTemplate(book){
     return `<div class="card">
                     
                     <button type="button" class="btn deleteBtn align-self-end mt-2">
-                    <img class="deleteIcon" src="${window.location.origin}/assets/img/trash.svg" alt="trashIcon">
+                    <img class="deleteIcon" src="${window.location.origin}/TheCollection/assets/img/trash.svg" alt="trashIcon">
                     </button>
                     <img id="card${book.number}-img__cover" class="bookCover card-img-top" src=${book.cover} alt="Book${book.number} Cover">
 
