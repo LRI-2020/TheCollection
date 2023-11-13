@@ -59,21 +59,20 @@ function DisplayFilter(filter) {
 
     //Vulnerable code
 
-  title.innerHTML=filter;
+  //title.innerHTML=filter;
 
     //XSS ATTACKS
     // Attack 1 --  <img src="x" onerror="alert(document.cookie)" >
-    // Attack 2 -- <button onmouseover=alert('BOOOM!')>click me!</button>
+    // Attack 2 -- <button onmouseover=alert(document.cookie)>click me!</button>
 
 
     // SOLUTION 1 - USE SAFE SINK
-  //  title.innerText=filter;
+   title.innerText=filter;
     //OR
     //title.textContent=filter;
 
     // SOLUTION 2 - ENCODE OUTPUT (better to use an external library for that)
     // title.innerHTML = encodeFilter(filter);
-
     
 }
 
